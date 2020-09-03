@@ -4,15 +4,15 @@
 namespace Statistics {
     
     Stats ComputeStatistics(const std::vector<float>& floatVector) {
-        struct Stats statsObj = {0.0f, 0.0f, 0.0f};
-        auto size_floatVector = floatVector.size();
-        if(size_floatVector == 0)
+        struct Stats obj1 = {0.0f, 0.0f, 0.0f};
+        bool size_zero = (floatVector.size() == 0) ;
+        if(size_zero)
         {
-            return statsObj;
+            return obj1;
         }
-        statsObj.average = accumulate( floatVector.begin(), floatVector.end(), 0.0) / size_floatVector;
-        statsObj.max = *max_element(floatVector.begin(), floatVector.end());
-        statsObj.min = *min_element(floatVector.begin(), floatVector.end());
-        return statsObj;
+        obj1.average = accumulate( floatVector.begin(), floatVector.end(), 0.0) / floatVector.size();
+        obj1.max = *max_element(floatVector.begin(), floatVector.end());
+        obj1.min = *min_element(floatVector.begin(), floatVector.end());
+        return obj1;
     }
 }
