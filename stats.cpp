@@ -4,7 +4,7 @@
 namespace Statistics {
     
     Stats ComputeStatistics(const std::vector<float>& floatVector) {
-        struct Stats obj1 = {0.0f, 0.0f, 0.0f};
+        struct Stats obj1 = {NaN, NaN, NaN};
         bool size_zero = (floatVector.size() == 0) ;
         if(size_zero)
         {
